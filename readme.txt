@@ -5,5 +5,5 @@ To create a model, create a model.php in models, make it extend b_model, and woa
 To load models, do $this->loadModel('modelname'), then to access it, do $this->modelname, same with a view. 
 Loading a library is $this->loadLibrary('libraryName') which *SHOULD* be an object, accessing it is $libraries['libraryName']->method().
 Calling is typed like this
-/index.php/controller/command(defaults to index)/arg1/arg2/arg3
+/index.php/controller/method(defaults to index)/arg1/arg2/arg3
 Autoloading libraries can be configured at /system/autoload.php
