@@ -1,5 +1,5 @@
 <?php
-//error_reporting(0);
+error_reporting(0);
 global $autoload;
 include 'system/b_controller.php';
 include 'system/b_model.php';
@@ -21,18 +21,22 @@ if(isset($parts[1])){
         die('INVALID_USER_PARAMS');
     }
     $arguments='';
-    $currentCode='$instance->'.$parts[1].'(';
-    unset($parts[1]);   
+    
+    
+    $methodname=$parts[1];
+    unset($parts[1]);
     foreach ($parts as $part){
     if(!validParam($part)){
         die('INVALID_USER_PARAMS');
     }
-        $arguments.=$part.',';
+        $arguments[]=$part; //In case we want to do some validation later
     }
-    $arguments=substr_replace($arguments,"",-1);
-    $currentCode=$currentCode.$arguments.');';   
+   // var_dump($arguments);
+	call_user_func_array(array($instance, $methodname), $arguments);
+
 }
 else{
-    $currentCode='$instance->index();';
+    $instance->index();
 }
-eval($currentCode);
+//eval($currentCode);
+;

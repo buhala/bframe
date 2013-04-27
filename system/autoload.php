@@ -1,6 +1,5 @@
 <?php
-$libraries=array('testlib');
-$models=array('model');
+$libraries=array();
 foreach($libraries as $lib){
     include 'libs/'.$lib.'.php';
     $libraries[$lib]=new $lib;
