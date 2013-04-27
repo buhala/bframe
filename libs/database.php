@@ -1,16 +1,16 @@
 <?php
 
-class database {
+class database extends b_library{
 
-    public $host;
-    public $username;
-    public $password;
-	private $host='localhost';
-	private $username='root';
-	private $password='';
-	private $db='test';
+    
+    private $host='localhost';
+    private $username='root';
+    private $password='';
+    private $db='test';
     private $ref;
-
+    public function __construct() {
+       // parent::__construct();
+    }
     public function connect($host, $username, $password) {
         
         $this->ref = mysqli_connect($this->host, $this->username, $this->password, $this->db) or die('Check MySQL Connection');

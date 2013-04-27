@@ -1,19 +1,26 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 global $autoload;
-include 'system/b_controller.php';
-include 'system/b_model.php';
-include 'system/autoload.php';
+define('PROJECT_DIR', 'C:\xampp\htdocs\bframe/');
+include PROJECT_DIR.'system/config.php';
+include PROJECT_DIR.'system/b_library.php';
+include PROJECT_DIR.'system/b_controller.php';
+include PROJECT_DIR.'system/b_model.php';
+include PROJECT_DIR.'system/autoload.php';
 function validParam($param){
     return preg_match('/^[a-z_]\w+$/i', $param);
 }
 $raw=$_SERVER['PATH_INFO'];
+if(!$raw){
+    $instance=new $GLOBALS['config']['autoload_controller'];
+    $instance->index();
+}
 $string=substr($raw,1);
 $parts=  explode('/', $string);
 if(!validParam($parts[0])){
     die('INVALID_USER_PARAMS');
 }
-include 'controllers/'.$parts[0].'.php';
+include PROJECT_DIR.'controllers/'.$parts[0].'.php';
 $instance=new $parts[0];
 unset($parts[0]);
 if(isset($parts[1])){
@@ -39,4 +46,4 @@ else{
     $instance->index();
 }
 //eval($currentCode);
-;
+
