@@ -1,5 +1,6 @@
 <?php
-$GLOBALS['config']['autoload_controller']='testcontroller';
+//Entire project's config options
+$GLOBALS['config']['autoload_controller']='welcome';
 $GLOBALS['config']['libraries']['database']['username']='root';
 $GLOBALS['config']['libraries']['database']['password']='';
 $GLOBALS['config']['libraries']['database']['host']='localhost';

@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-global $autoload;
-define('PROJECT_DIR', 'C:\xampp\htdocs\bframe/');
-include PROJECT_DIR.'system/includes.php';
+error_reporting(E_ERROR | E_WARNING | E_PARSE); //The system occasionally throws a notice
+global $autoload;//We want it accessed from a lot of places
+define('PROJECT_DIR', 'C:\xampp\htdocs\bframe/');//Change this line in case you move the project somewhere else
+include PROJECT_DIR.'system/includes.php'; 
 $bootstrap=new bootstrap($_SERVER['PATH_INFO']);
 $controller=$bootstrap->getController();
 $instance=$bootstrap->createInstance($controller);
