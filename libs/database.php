@@ -9,7 +9,7 @@ class database extends b_library{
     private $db='test';
     private $ref;
     public function __construct() {
-       // parent::__construct();
+        parent::__construct();
     }
     public function connect($host, $username, $password) {
         
