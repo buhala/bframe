@@ -7,4 +7,8 @@ class b_library{
             $this->key=$value;
         }
     }
+    public function loadLibrary($lib){
+        include 'libs/'.$lib.'.php';
+        $libraries[$lib]=new $lib;
+    }
 }
