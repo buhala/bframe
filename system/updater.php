@@ -5,13 +5,14 @@ class updater{
 	**/
 	public function __construct(){
 		$this->curversion=file_get_contents('http://buhalblog.free.bg/bframe/version.txt');
-		$this->offversion=$GLOBALS['system']['version'];
+		$this->offversion=$GLOBALS['config']['system']['version'];
 	}
 	/**
 	*SHUT.DOWN.EVERYTHING if the version is incorrect
 	**/
 	public function checkVersion(){
 		if($this->curversion!=$this->offversion){
+			echo $this->curversion.' '.$this->offversion;
 			die('UPDATE_FRAMEWORK');
 		}
 	}
