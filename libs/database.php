@@ -3,11 +3,11 @@
 class database extends b_library{
 
     
-    private $host='localhost';
-    private $username='root';
-    private $password='';
+    private $host;
+    private $username;
+    private $password;
     private $query;
-    private $db='test';
+    private $db=;
     private $ref;
     public function __construct() {
         parent::__construct();
