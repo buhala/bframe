@@ -1,5 +1,5 @@
 <?php
-class encrypt extends b_library{
+class hash extends b_library{
     public function __construct() {
         parent::__construct();
     }
