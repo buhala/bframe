@@ -12,7 +12,7 @@ class database extends b_library{
     public function __construct() {
         parent::__construct();
     }
-    public function connect($host, $username, $password) {
+    public function connect() {
         
         $this->ref = mysqli_connect($this->host, $this->username, $this->password, $this->db) or die('Check MySQL Connection');
         return $this->ref; //For development purposes;
