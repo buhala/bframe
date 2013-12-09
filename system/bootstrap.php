@@ -21,10 +21,10 @@ class bootstrap {
         $autoRouted = $GLOBALS['config']['extra']['routing']($this->raw);
         if ($autoRouted === true) {
             throw new Exception("INSTANCE_CREATED_ALREADY");
-            die();
         }
         $this->components = explode('/', $this->raw);
         $arguments = $this->components;
+        
         unset($arguments[0]);
         unset($arguments[1]);
         $this->arguments = array_values($arguments);

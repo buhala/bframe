@@ -28,6 +28,10 @@ $GLOBALS['config']['extra']['routing']=function($route){
             $instance=new testController();
             $instance->test();
             return true;
+        break;
+        default:
+            return false;
+        break;
     }
     return false;
 };
