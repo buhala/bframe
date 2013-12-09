@@ -17,7 +17,7 @@ trait b_controller {
 
     public function loadModel($model) {
         include_once PROJECT_DIR . 'models/' . $model . '.php';
-        if (!isset($this->model)) {
+        if (!isset($this->$model)) {
             $this->$model = new $model;
         }
         return $this->$model; //
