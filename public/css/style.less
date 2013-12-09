@@ -1,0 +1,129 @@
+@background:#6e7884;
+@special:lighten(darkred,20%);
+@link:lighten(@background,25%);
+body{
+    background: @background;
+    font-family:'Verdana';
+    margin: 0;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration:underline;
+}
+#container{
+
+    box-shadow:10px 10px 10px darken(@background,5%); 
+    margin:0 auto;
+    width:1170px;
+    background:white;
+    margin-bottom:60px;
+}
+#page{
+    padding: 10px;
+}
+#logo {
+
+    width: 200px;
+    display: inline-block;
+
+}
+#login-nav {
+    padding-right:20px;
+    text-align: right;
+    display:inline;
+    float:right;
+    a:hover{
+        color:@special;
+
+    }
+}
+nav {
+    text-align:right;
+    padding:0;
+    margin:0;
+    a{
+        padding:3px;
+        padding-bottom:0px;
+        margin:3px;
+        border-radius:3px 3px 0px 0px;
+        border:1px solid #6e7884;
+        border-bottom:0px;
+
+    }
+    a:hover{
+        border:1px solid @special;
+        background-color:@special;
+        color:white;
+    }
+}
+#page{
+
+    text-align:justify;
+    border-top:1px solid darken(@special,5%);
+    #leftbar{
+        margin-right:40px;
+        width:850px;
+        display:inline;
+        float:left;
+
+    }
+    #rightbar{
+        display:inline;
+        width:200px;
+    }
+}
+.clear{
+    clear:both;
+}
+h2{
+    color:@special;
+}
+input[type="text"],input[type="email"],input[type="password"],textarea{
+    box-shadow: 0;
+    padding:4px;
+    border:1px solid #CCCCCC;
+
+    border-radius:4px;
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus,textarea:focus{
+    box-shadow:0 1px 1px lighten(@link,10%) inset, 0 0 6px lighten(@link,10%);
+}
+input[type="submit"]{
+    border:1px solid #ccc;
+    padding:5px;
+    border-radius:4px;
+    color:#333333;
+    background:linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+    box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05)
+}
+input[type="submit"]:hover{
+    color:#333;
+    text-shadow:0 1px 1px rgba(255, 255, 255, 0.75);
+    background:linear-gradient(to bottom, darken(#FFFFFF,7%), darken(#E6E6E6,7%));
+
+}
+#footer{
+    border-top:1px solid @special;
+    text-align:center;
+    width:100%;
+    background:lighten(@background,25%);
+}
+.filler{
+    margin-bottom:500px;
+}
+#login-box{
+    
+    max-width:300px;
+    margin:0 auto;
+    margin-top:100px;
+    padding:25px;
+    border-radius:5px;
+    border:1px solid grey;
+    table{
+        text-align:center;
+        margin:0 auto;
+    }
+}

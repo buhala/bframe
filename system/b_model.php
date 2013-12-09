@@ -1,18 +1,33 @@
 <?php
-class b_model{
-	/**
-    *Loads a model
-    **/
-    public function loadModel($model){
-        include 'models/'.$model.'.php';
-        $this->$model=new $model;
+
+trait b_model {
+
+    public function __construct() {
+        $this->setVars();
+    }
+
+    public function setVars() {
+        foreach ($GLOBALS['libraries'] as $key => $value) {
+            $this->$key = $value;
+        }
+    }
+
+    public function loadModel($model) {
+        include_once PROJECT_DIR . 'models/' . $model . '.php';
+        if (!isset($this->$model)) {
+            $this->$model = new $model;
+        }
         return $model;
     }
+
     /**
-    *Loads a library
-    **/
-    public function loadLibrary($lib){
-        include 'libs/'.$lib.'.php';
-        $libraries[$lib]=new $lib;
+     * Loads a library
+     * */
+    public function loadLibrary($lib) {
+        include_once PROJECT_DIR . 'libs/' . $lib . '.php';
+        if (!isset($GLOBALS['libraries'][$lib])) {
+            $GLOBALS['libraries'][$lib] = new $lib;
+        }
     }
+
 }
