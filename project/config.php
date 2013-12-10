@@ -22,6 +22,9 @@ $GLOBALS['config']['extra']['github']['username'] = 'albertvision';
 $GLOBALS['config']['extra']['github']['project'] = 'OpenSupport';
 $GLOBALS['config']['extra']['lang'] = 'bg';
 $GLOBALS['config']['extra']['routing']=function($route){
+	if(preg_match("/method\/[0-9]+/",$route)){
+	
+	}
     switch($route){
         case 'alternate':
             include PROJECT_DIR.'controllers/testController.php';

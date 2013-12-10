@@ -30,7 +30,7 @@ trait b_library {
      * @param type $lib
      */
     public function loadLibrary($lib) {
-        include_once PROJECT_DIR . 'libs/' . $lib . '.php';
+       // include_once PROJECT_DIR . 'libs/' . $lib . '.php';
         if (!isset($GLOBALS['libraries'][$lib])) {
             $GLOBALS['libraries'][$lib] = new $lib;
         }

@@ -13,7 +13,7 @@ trait b_model {
     }
 
     public function loadModel($model) {
-        include_once PROJECT_DIR . 'models/' . $model . '.php';
+       // include_once PROJECT_DIR . 'models/' . $model . '.php';
         if (!isset($this->$model)) {
             $this->$model = new $model;
         }
@@ -24,7 +24,7 @@ trait b_model {
      * Loads a library
      * */
     public function loadLibrary($lib) {
-        include_once PROJECT_DIR . 'libs/' . $lib . '.php';
+        //include_once PROJECT_DIR . 'libs/' . $lib . '.php';
         if (!isset($GLOBALS['libraries'][$lib])) {
             $GLOBALS['libraries'][$lib] = new $lib;
         }

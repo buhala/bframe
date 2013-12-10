@@ -5,4 +5,4 @@ include SYSTEM_DIR.'b_library.php';
 include SYSTEM_DIR.'b_controller.php';
 include SYSTEM_DIR.'b_model.php';
 include SYSTEM_DIR.'autoload.php';
-include SYSTEM_DIR.'bootstrap.php';
+include SYSTEM_DIR.'b_bootstrap.php';
